@@ -1,0 +1,136 @@
+# Burst Defense
+
+A small tower defense game built with **Python + Pygame**.
+This project is inspired by Bloons-style gameplay, but Phase 1 is focused on a **clean codebase and a playable foundation** rather than feature completeness.
+
+## What this project is
+
+Burst Defense currently includes a simple but complete gameplay loop:
+- enemies follow a waypoint path
+- the player places towers
+- towers shoot projectiles automatically
+- waves, money, and lives are tracked
+- the game ends in victory or defeat
+
+The code is organized for readability so another person can continue the project easily.
+
+## Phase 1: Completed
+
+- multi-file project structure
+- one map with waypoint pathing
+- enemy movement with progress tracking
+- one tower type
+- projectile combat
+- three sample waves
+- money and lives system
+- tower placement preview and validation
+- HUD and end-state overlays
+- comments, docstrings, and clear TODOs
+
+## Not done yet
+
+- more tower types
+- upgrades
+- selectable targeting modes
+- layered/splitting enemies
+- special enemy traits
+- particles and sound
+- menus, save/load, map selection
+- balance tools and debug features
+
+## How to run
+
+### 1. Create a virtual environment (recommended)
+
+**macOS / Linux**
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+**Windows (PowerShell)**
+
+```powershell
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+```
+
+### 2. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Start the game
+
+```bash
+python main.py
+```
+
+## Controls
+
+- `T` - toggle tower placement
+- left click - place tower
+- right click - cancel placement
+- `SPACE` - start next wave
+- `R` - restart after win/loss
+
+## Project structure
+
+```text
+burst_defense_phase1/
+├── main.py
+├── README.md
+├── requirements.txt
+└── burst_defense/
+    ├── data.py
+    ├── game.py
+    ├── path.py
+    ├── settings.py
+    ├── entities/
+    │   ├── enemy.py
+    │   ├── projectile.py
+    │   └── tower.py
+    ├── systems/
+    │   ├── placement.py
+    │   └── wave_manager.py
+    └── ui/
+        └── hud.py
+```
+
+## File guide
+
+- `main.py` - starts the game
+- `game.py` - main coordinator for input, updates, and drawing
+- `data.py` - tower, enemy, wave, and map data
+- `path.py` - path math and rendering
+- `settings.py` - constants and layout values
+- `entities/` - enemies, towers, and projectiles
+- `systems/` - placement rules and wave spawning
+- `ui/` - HUD drawing
+
+## Design choices
+
+- **Readable over clever:** the code is written for handoff, not compression.
+- **Modular early:** systems are split now so later features do not require a rewrite.
+- **Python data first:** content lives in Python dictionaries for now to keep Phase 1 easy to run and modify.
+
+## Next steps
+
+1. Add more tower types
+2. Add tower selection and targeting modes
+3. Add enemy splitting/layer behavior
+4. Move static data into external files
+5. Add effects, audio, and more polish
+
+## Known limitations
+
+- only one map
+- only one tower type
+- simple HP enemies instead of layered bloons
+- minimal UI and no art assets yet
+
+## Summary
+
+Phase 1 is a clean, playable scaffold. It is meant to be easy to understand, easy to run, and easy to extend.
